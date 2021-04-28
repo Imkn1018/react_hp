@@ -20,7 +20,8 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 // import { MenuButton } from '../Atoms/MenuButton';
 import { MenuDrawer } from '../Molecules/MenuDrawer';
 
-export const Header: VFC = memo(() => {
+export const Header: VFC = memo((props) => {
+  const {children} = props
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   // const onClickTop = () => alert('Top');
@@ -44,7 +45,7 @@ export const Header: VFC = memo(() => {
           mr={8}
           _hover={{ cursor: 'pointer' }}
           w="100%"
-        ></Flex>
+        >{children}</Flex>
         <Button onClick={onOpen} >
          <HamburgerIcon color="gray.400" bg="white"/>
         </Button>
