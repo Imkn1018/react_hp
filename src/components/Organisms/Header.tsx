@@ -26,11 +26,12 @@ import { Theme, theme } from '../../providers/ThemeProvider';
 export const Header: VFC = memo((props) => {
   const { children } = props;
   const { isOpen, onClose, onOpen } = useDisclosure();
-  const { dark, setDark } = useContext(Theme);
+  const { isDark, setDark } = useContext(Theme);
 
   const isCheckDark = () => {
-    setDark(!dark);
-    
+   
+    setDark(!isDark);
+    console.log(isDark);
   };
   const history = useHistory();
 
@@ -54,7 +55,7 @@ export const Header: VFC = memo((props) => {
         justify="space-between"
         padding={{ base: 3, md: 5 }}
         mb={0}
-        bg={dark ? theme.dark.backgroundColor : theme.light.backgroundColor}
+        bg={isDark ? theme.dark.backgroundColor : theme.light.backgroundColor}
       >
         <Flex
           align="center"
@@ -62,20 +63,22 @@ export const Header: VFC = memo((props) => {
           mr={8}
           _hover={{ cursor: 'pointer' }}
           w="100%"
-          bg={dark ? theme.dark.backgroundColor : theme.light.backgroundColor}
-
+          bg={isDark ? theme.dark.backgroundColor : theme.light.backgroundColor}
         >
           {children}
         </Flex>
-        <Button onClick={onOpen}>
+        <Button
+          onClick={onOpen}
+          
+        >
           <HamburgerIcon color="gray.400" bg="white" />
         </Button>
-        <Drawer placement="right" onClose={onClose} isOpen={isOpen} >
+        <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
           <DrawerOverlay />
           <DrawerContent>
             <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
             <DrawerBody>
-              <Link onClick={onClickHome} >Home</Link>
+              <Link onClick={onClickHome}>Home</Link>
               <p onClick={onClickProfile}>Profile</p>
               <p onClick={onClickImages}>Images</p>
             </DrawerBody>

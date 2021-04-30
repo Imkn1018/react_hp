@@ -13,12 +13,12 @@ export const theme = {
   },
   dark: {
     color: 'white',
-    backgroundColor: 'black.200',
+    backgroundColor: 'black',
   },
 };
 
 export type Dark = {
-  dark: boolean;
+  isDark: boolean;
   setDark: Dispatch<SetStateAction<boolean>>;
 };
 
@@ -26,7 +26,7 @@ export const Theme = createContext({} as Dark);
 
 export const ThemeProvider = (props: { children: ReactNode }) => {
   const { children } = props;
-  const [dark, setDark] = useState(false);
+  const [isDark, setDark] = useState(false);
 
-  return <Theme.Provider value={{ dark, setDark }}>{children}</Theme.Provider>;
+  return <Theme.Provider value={{ isDark, setDark }}>{children}</Theme.Provider>;
 };
