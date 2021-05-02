@@ -1,4 +1,11 @@
-import {memo} from "react"
+import { memo } from 'react';
 export const Profile = memo(() => {
-  return <div>Profile</div>;
+  return (
+    <>
+    <div>from to</div>
+    <div>from to</div>
+    <div>from to</div>
+    <div>from to</div>
+    </>
+  );
 });
