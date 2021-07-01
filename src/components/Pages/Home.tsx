@@ -42,7 +42,7 @@ export const Home = memo(() => {
         </Flex>
         <Flex h={{ base: 'md' }} bg="gray.300" flexDirection="column">
           <Text align="right" m={4}>
-            --------about me
+            --------my rules
           </Text>
           <Text fontSize="2rem" p={3}>
             texttext
@@ -57,7 +57,7 @@ export const Home = memo(() => {
         </Flex>
         <Flex h={{ base: 'md' }} bg="gray.500" flexDirection="column">
           <Text align="right" m={4}>
-            --------images
+            --------my misson
           </Text>
           <Text p={3} fontSize="2rem">
             texttext
